@@ -1,5 +1,4 @@
-FROM petzi/pre-commit:1.15.2
-ENTRYPOINT ["pre-commit", "run", "--config", "/.pre-commit-config.yaml"]
+FROM petzi/pre-commit:1.15.2-7
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     docker-compose \
