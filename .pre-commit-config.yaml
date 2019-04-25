@@ -13,6 +13,25 @@ repos:
       - id: shellcheck
         verbose: true
         types: [shell]
+  - repo: local
+    hooks:
+      - id: shfmt-check
+        name: Check shell script format with shfmt
+        verbose: true
+        entry: /usr/local/bin/shfmt
+        args: [-d]
+        language: system
+        types: [shell]
+  - repo: local
+    hooks:
+      - id: shfmt-fix
+        name: Check shell script format with shfmt
+        verbose: true
+        entry: /usr/local/bin/shfmt
+        args: [-w]
+        stages: [manual]
+        language: system
+        types: [shell]
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.15.0
     hooks:
