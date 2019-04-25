@@ -1,0 +1,21 @@
+---
+fail_fast: false
+repos:
+  - repo: https://github.com/IamTheFij/docker-pre-commit
+    rev: v1.0.0
+    hooks:
+      - id: docker-compose-check
+        verbose: true
+        files: 'docker-compose.*\.ya?ml'
+  - repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: 1.11.0
+    hooks:
+      - id: shellcheck
+        verbose: true
+        types: [shell]
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.15.0
+    hooks:
+      - id: yamllint
+        verbose: true
+        types: [yaml]

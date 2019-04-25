@@ -5,3 +5,4 @@ RUN apt-get update \
     shellcheck \
     yamllint \
     && rm -rf /var/lib/apt/lists/*
+COPY .pre-commit-config.yaml .
