@@ -1,7 +1,11 @@
 # docker-pre-commit-common
-A docker image containing pre-commit along with useful tools for many projects
+A docker image containing [pre-commit] along with useful tools for many projects
 
-## Tools included
+## Goal
+
+This image provides [pre-commit] with many cross-project tools. This includes style and syntax checkers for Docker, shell scripts and many configuration languages, such as yaml.
+
+### Tools currently included
 
 1. docker-compose
 1. shellcheck
@@ -23,3 +27,5 @@ There is a pre-commit rule installed to fix shfmt formatting. It is defined for 
 ```
 docker run --rm -it -v "${PWD}:/src" -w /src petzi/pre-commit-common --hook-stage manual shfmt-fix
 ```
+
+[pre-commit]: https://pre-commit.com
