@@ -1,16 +1,20 @@
 ---
 fail_fast: false
 repos:
-  - repo: https://github.com/IamTheFij/docker-pre-commit
-    rev: v1.0.0
+  - repo: local
     hooks:
       - id: docker-compose-check
+        name: Check docker-compose files
+        entry: /compose-check.sh
         verbose: true
+        language: script
         files: 'docker-compose.*\.ya?ml'
-  - repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: 1.11.0
+  - repo: local
     hooks:
       - id: shellcheck
+        name: Run shellcheck
+        entry: shellcheck
+        language: system
         verbose: true
         types: [shell]
   - repo: local
@@ -32,9 +36,11 @@ repos:
         stages: [manual]
         language: system
         types: [shell]
-  - repo: https://github.com/adrienverge/yamllint
-    rev: v1.15.0
+  - repo: local
     hooks:
       - id: yamllint
+        name: Run yamllint on yaml files
+        entry: yamllint
+        language: system
         verbose: true
         types: [yaml]

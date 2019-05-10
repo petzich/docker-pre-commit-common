@@ -1,0 +1,2 @@
+docker-compose==1.23.2
+yamllint==1.15.0
