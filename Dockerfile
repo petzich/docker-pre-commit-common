@@ -1,4 +1,4 @@
-FROM petzi/pre-commit:dev-latest-alpine
+FROM petzi/pre-commit:1.15.2-9
 COPY requirements.txt /
 RUN pip3 install --no-cache-dir -r requirements.txt
 COPY .pre-commit-config.yaml /
