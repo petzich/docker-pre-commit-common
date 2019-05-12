@@ -8,7 +8,7 @@ repos:
         entry: /usr/local/bin/compose-check.sh
         verbose: true
         language: script
-        files: 'docker-compose.*\.ya?ml'
+        files: 'docker-compose\.ya?ml'
   - repo: local
     hooks:
       - id: shellcheck
